@@ -1,0 +1,59 @@
+page-event-detail {
+    .main-content {
+        .first-card {
+            width: 100%;
+            margin: 0px;
+        }
+        .second-card {
+            margin: 0px;
+            margin-top: 9px;
+            width: 100%;
+            .number {
+                color: black;
+                font-size: x-large;
+                opacity: 0.8;
+            }
+            .detail {
+                color: black;
+                font-weight: 400;
+                font-size: initial;
+            }
+            p {}
+        }
+        .column-1 {
+            .date {
+                font-size: xx-large;
+                color: black;
+            }
+            .month {
+                color: red;
+                font-size: large;
+            }
+        }
+        .second-col {
+            border-bottom: 1px solid #dedede;
+        }
+        .column-2 {
+            .run {
+                font-size: large;
+                color: black;
+            }
+            .by {
+                font-size: medium;
+                color: gray;
+            }
+        }
+        .third-col {
+            ion-icon {
+                font-size: 3rem;
+            }
+        }
+        .timedate {
+            color: black;
+            font-size: 1.7rem;
+        }
+        .location {
+            color: gray;
+        }
+    }
+}

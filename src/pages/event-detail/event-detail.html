@@ -1,0 +1,100 @@
+<!--
+  Generated template for the EventDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar color="danger">
+        <ion-title>Event Detail</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding class="main-content">
+
+    <ion-card class="first-card" no-padding>
+
+        <ion-grid class="grid-data" no-padding>
+            <ion-row style="
+            height: 16em;">
+                <ion-col>
+                    <img [src]="eventImage" style="height: 16em;">
+                    <!-- <img src="assets/img/groccery1.png"> -->
+
+                </ion-col>
+            </ion-row>
+            <ion-row padding class="second-col">
+                <ion-col col-3 class="column-1">
+                    <span class="date">{{eventDetail.date | date:"dd"}}</span><br>
+                    <span class="month">{{eventDetail.date | date:"MMM"}}</span>
+                </ion-col>
+                <ion-col col-9 class="column-2">
+                    <span class="run">{{eventDetail.title}}</span><br>
+                    <span class="by">Public.Event.by Weekend Runner</span>
+                </ion-col>
+            </ion-row>
+            <ion-row class="third-col second-col" padding>
+                <ion-col col-4 text-center (click)="toggleSign(0)">
+                    <ion-icon [ngStyle]="{'color':iconColor}" name="star-outline"></ion-icon><br><span [ngStyle]="{'color':iconColor}">Interested</span>
+                </ion-col>
+                <ion-col col-4 text-center (click)="toggleSign(1)">
+                    <ion-icon name="checkmark-circle-outline" [ngStyle]="{'color':iconColor1}"></ion-icon><br><span [ngStyle]="{'color':iconColor1}">Going</span>
+                </ion-col>
+                <ion-col col-4 text-center (click)="toggleSign(2)">
+                    <ion-icon name="thumbs-down" [ngStyle]="{'color':iconColor2}"></ion-icon><br><span [ngStyle]="{'color':iconColor2}">Not Going</span>
+                </ion-col>
+            </ion-row>
+            <ion-row padding>
+                <ion-col>
+                    <span class="timedate"> {{eventDetail.date | date:"dd MMM"}} at {{eventDetail.time}}</span><br>
+                    <span class="location"> Posted on:  {{eventDetail.date_added | date:"dd/MM/yy"}} </span>
+
+                </ion-col>
+            </ion-row>
+            <ion-row padding>
+                <ion-col>
+                    <span class="timedate">Event Code</span><br>
+                    <span class="location"> {{eventDetail.code }} </span>
+                </ion-col>
+            </ion-row>
+            <ion-row padding>
+                <ion-col>
+
+                    <span class="timedate">{{eventDetail.location }}</span><br>
+                    <!-- <span class="location">Bougainvillea Garden,Sector 3, Chandigarh, India, 13119</span> -->
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+    </ion-card>
+
+    <ion-card class="second-card">
+        <ion-grid>
+            <ion-row>
+                <ion-col col-4 text-center (click)="showList(0,intersested)">
+                    <span class="timedate">  Interested </span><br>
+                    <span class="number">{{intersested}}</span>
+
+                </ion-col>
+                <ion-col col-4 text-center (click)="showList(1,going)">
+                    <span class="timedate">  Going </span><br>
+                    <span class="number">{{going}}</span>
+                </ion-col>
+                <ion-col col-4 text-center (click)="showList(2,notgoing)">
+                    <span class="timedate">  Not-Going </span><br>
+                    <span class="number">{{notgoing}}</span>
+                </ion-col>
+
+            </ion-row>
+        </ion-grid>
+    </ion-card>
+
+    <ion-card class="second-card" padding>
+        <span class="detail">Details</span>
+        <p>{{eventDetail.description}} </p>
+    </ion-card>
+
+</ion-content>

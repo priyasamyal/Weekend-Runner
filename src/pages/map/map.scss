@@ -1,0 +1,109 @@
+page-map {
+  $map-height: 100%;
+  $nearby-places-height: 35%;
+
+  .map-row
+  {
+    height: $map-height;
+    margin: 0px !important;
+
+    .map-col
+    {
+      position: relative;
+    }
+
+    .search-container
+    {
+      position: absolute;
+      left: 0px;
+      right: 0px;
+      z-index: 4;
+
+      .search-toolbar
+      {
+        padding: 0px 10px;
+
+        .toolbar-background
+        {
+//          background: color($colors, background, base);
+          border: none;
+//          @include element-shadow();
+        }
+
+        &.transparent-background
+        {
+          .toolbar-background
+          {
+            background: transparent;
+            box-shadow: none;
+          }
+
+          ion-searchbar.search-places-bar
+          {
+      			.searchbar-input
+      			{
+      				background-color: #fff;
+      			}
+          }
+        }
+
+        .bar-buttons
+        {
+          margin: 0px;
+
+          .geolocation-button
+          {
+            color: lighten(#000, 60%);;
+            margin-left: -3px;
+
+            &.using-geolocation
+            {
+              color: #0079c1;
+            }
+          }
+        }
+
+        ion-searchbar.search-places-bar
+        {
+    			background: transparent;
+    			padding: 10px 0px;
+          padding-left: 5px;
+    			border: none;
+
+    			.searchbar-input
+    			{
+    				border-radius: 1.5rem;
+    				color: #0079c1;
+    				background-color: darken(#fff, 12%);
+    			}
+
+    			.searchbar-search-icon {
+    			  @include ios-searchbar-icon($searchbar-ios-input-search-icon-svg, #0079c1);
+    			}
+    		}
+      }
+
+      .search-results
+      {
+        padding: 10px;
+        padding-top: 0px;
+      }
+    }
+
+    .map-container
+    {
+      position: absolute;
+      top: 0px;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+
+      google-map {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+  }
+
+}

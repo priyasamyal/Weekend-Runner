@@ -1,0 +1,149 @@
+<ion-header>
+
+    <ion-navbar color="danger">
+        <ion-row (click)="groupInfo()">
+            <ion-col col-2>
+                <ion-avatar class="img-container">
+                    <img [src]="groupImage">
+                </ion-avatar>
+            </ion-col>
+            <ion-col col-10>
+                <ion-title style="margin-top: 7px"> {{group.group_name}}</ion-title>
+            </ion-col>
+        </ion-row>
+
+        <ion-buttons end>
+            <button ion-button icon-only (click)="chat() ">
+                        <ion-icon class="chat_box " ios="ios-chatbubbles " md="md-chatbubbles"></ion-icon>  </button>
+
+            <button ion-button icon-only (click)="createEvent($event)">
+                <ion-icon name="create"></ion-icon>  </button>
+
+            <button ion-button icon-only (click)="goToSubscription()">
+                        <ion-icon name="logo-usd"></ion-icon>  </button>
+
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="main-content">
+    <ion-segment [(ngModel)]="defaultPage" color="danger">
+        <ion-segment-button value="events">
+            Events
+        </ion-segment-button>
+        <ion-segment-button value="subscription">
+            Subscription
+        </ion-segment-button>
+
+    </ion-segment>
+
+    <div *ngIf="showContent && defaultPage=='events'">
+        <div>
+            <h3 *ngIf="!isEvent" (click)="createEvent($event)"> No Event Posted</h3>
+            <img *ngIf="!isEvent" src='assets/img/nothing-found.png'>
+            <ion-row *ngIf="isEvent">
+                <!-- <ion-col col-10>
+                    <h3 *ngIf="isEvent">Events</h3>
+                </ion-col>
+                <ion-col>
+                    <button *ngIf="shareIcon" color="danger" ion-button icon-only>
+            <ion-icon name="share-alt"></ion-icon></button>
+                </ion-col> -->
+                <ion-card class="past-event " no-padding *ngFor="let item of eventList;let i=index">
+
+                    <!-- <ion-card-content no-padding longPress [data]=item [over]="status" (sendData)="selectItem($event);" (show)="showEventDetails($event)" (unselect)="unselectItem($event)"> -->
+                    <ion-card-content no-padding>
+
+
+                        <ion-grid>
+                            <ion-row>
+                                <ion-col class=" column-1" col-2 text-center>
+
+                                    <span class="month"> {{item.date| date:"MMM "}} </span><span class="date"> {{item.date| date:"dd "}} </span>
+                                </ion-col>
+
+                                <ion-col class="column-2" col-8 (click)="showEventDetails(item)">
+                                    <span class="title">{{item.title}}</span><br>
+                                    <span>Time :<span class="time">{{item.time}}</span> </span><br>
+                                    <span>Location : <span class="location ">Location: {{item.location}}</span></span>
+                                </ion-col>
+                                <ion-col col-2 text-center>
+                                    <br>
+                                    <span class="popover-icon">
+                                   <ion-icon  class="popover-icon-class" [style.color]="item.icon=='calendar' ? 'black': 'red' " [name]="item.icon"></ion-icon>
+                                    </span>
+                                    <button (click)="editEvent(item)" *ngIf="item.user_id == myId" ion-button round outline color="danger" style="height:2rem;width:100%;left:3px;bottom: 0;position: absolute;padding: 2px 0px 0px 0px;font-size: 10px;">
+                                        Edit</button>
+                                    <!-- <span (click)="editEvent(item)" *ngIf="item.user_id == myId" style="color: #f53d3d "> Edit</span> -->
+                                </ion-col>
+                            </ion-row>
+                        </ion-grid>
+                    </ion-card-content>
+                </ion-card>
+            </ion-row>
+        </div>
+    </div>
+    <div *ngIf="defaultPage=='subscription'">
+
+        <ion-card class="past-event " no-padding>
+
+            <ion-card-content no-padding>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col class=" column-1" col-2 text-center>
+
+                            <span class="month">Dec </span><span class="date"> 12 </span>
+                        </ion-col>
+
+                        <ion-col class="column-2" col-10>
+                            <span>Amount :<span class="time">810</span> </span><br>
+                            <span>Last Date :<span class="time">25 Dec,2017</span> </span><br>
+                            <span>Details : <span class="location ">Amount required for Tshirts . All are requiered to pay their amounts before the last date</span></span>
+                        </ion-col>
+
+                    </ion-row>
+                </ion-grid>
+            </ion-card-content>
+        </ion-card>
+        <ion-card class="past-event " no-padding>
+
+            <ion-card-content no-padding>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col class=" column-1" col-2 text-center>
+
+                            <span class="month">Dec </span><span class="date"> 12 </span>
+                        </ion-col>
+
+                        <ion-col class="column-2" col-10>
+                            <span>Amount :<span class="time">810</span> </span><br>
+                            <span>Last Date :<span class="time">25 Dec,2017</span> </span><br>
+                            <span>Details : <span class="location ">Amount required for Tshirts . All are requiered to pay their amounts before the last date</span></span>
+                        </ion-col>
+
+                    </ion-row>
+                </ion-grid>
+            </ion-card-content>
+        </ion-card>
+        <ion-card class="past-event " no-padding>
+
+            <ion-card-content no-padding>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col class=" column-1" col-2 text-center>
+
+                            <span class="month">Dec </span><span class="date"> 12 </span>
+                        </ion-col>
+
+                        <ion-col class="column-2" col-10>
+                            <span>Amount :<span class="time">810</span> </span><br>
+                            <span>Last Date :<span class="time">25 Dec,2017</span> </span><br>
+                            <span>Details : <span class="location ">Amount required for Tshirts . All are requiered to pay their amounts before the last date</span></span>
+                        </ion-col>
+
+                    </ion-row>
+                </ion-grid>
+            </ion-card-content>
+        </ion-card>
+    </div>
+</ion-content>

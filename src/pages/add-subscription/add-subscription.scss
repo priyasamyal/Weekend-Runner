@@ -1,0 +1,12 @@
+page-add-subscription {
+    .item-md.item-input.item-input-has-focus .item-inner,
+    .item-md.item-input.input-has-focus .item-inner {
+        border-bottom-color: white;
+        -webkit-box-shadow: inset 0 -1px 0 0 white;
+        box-shadow: inset 0 -1px 0 0 white;
+    }
+    ion-textarea {
+        border: 1px solid red;
+        border-radius: 6px;
+    }
+}

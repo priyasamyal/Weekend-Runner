@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            Contacts
+        </ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only class="white_icon" (click)="refreshContacts()">
+                <ion-icon name="refresh"></ion-icon>
+            </button>
+            <button ion-button icon-only class="white_icon" (click)="saveMember()" *ngIf="members.length!=0">  <ion-icon ios="ios-checkbox-outline" md="md-checkbox-outline"></ion-icon>
+              </button>
+            <button ion-button icon-only (click)="shareApplication()">
+                <ion-icon name="share"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+    <ion-list *ngIf="demoCont.length!=0">
+        <ion-searchbar [(ngModel)]="myInput" [showCancelButton]="shouldShowCancel" (ionInput)="search($event)" (ionCancel)="onCancel()"></ion-searchbar>
+        <ion-list-header>
+            Friends Connected
+        </ion-list-header>
+        <ng-container *ngFor="let contact of contactList">
+            <ion-item (click)="addMember(contact)">
+                <ion-label>{{contact.displayName}}</ion-label>
+                <ion-checkbox [(ngModel)]="contact.isCheck" (ionChange)="addMember(contact)"></ion-checkbox>
+                <ion-avatar item-start>
+                    <img src="assets/img/no-user.png" *ngIf="contact.photos==null">
+                    <img [src]="getPicture(contact.photos[0].value)" *ngIf="contact.photos!=null">
+                </ion-avatar>
+                <h2> {{contact.displayName}}</h2>
+            </ion-item>
+        </ng-container>
+    </ion-list>
+
+    <ion-card (click)="shareApplication()" *ngIf="contactList.length!=0">
+        <ion-list>
+            <ion-item style="text-align: center">
+                <ion-icon color="danger" name="share"></ion-icon>
+                &nbsp;Invite Friends
+            </ion-item>
+        </ion-list>
+
+    </ion-card>
+    <ion-list *ngIf="contactList.length==0">
+        <div class="no-chat">
+            <ion-icon ios="ios-contact" md="md-contact"></ion-icon>
+            <p> No contacts found!</p>
+        </div>
+    </ion-list>
+</ion-content>

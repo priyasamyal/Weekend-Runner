@@ -1,0 +1,72 @@
+<ion-header>
+    <ion-navbar color="danger">
+
+        <!-- <ion-title>{{groupName}}</ion-title> -->
+        <ion-row (click)="groupInfo()">
+            <ion-col col-2>
+                <ion-avatar class="img-container">
+                    <img [src]="group_image">
+                </ion-avatar>
+            </ion-col>
+            <ion-col col-10>
+                <ion-title style="margin-top: 7px"> {{groupName}}</ion-title>
+            </ion-col>
+        </ion-row>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="main-content">
+    <div class="profile-image" [style.backgroundImage]="getGroupImage()">
+        <ion-grid>
+            <ion-row>
+                <ion-col no-padding>
+                    <h3>{{groupName}}</h3>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-11 no-padding>
+                    <h6>Created on: {{createDate | date : "dd/MM/y"}}</h6>
+                </ion-col>
+                <ion-col col-1 no-padding>
+                    <ion-icon name="create" style="color: white" (click)="update()"></ion-icon>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+    <ion-card>
+        <ion-card-header>
+            {{numberOfMembers}} participants
+        </ion-card-header>
+        <ion-card-content>
+
+            <ion-list *ngIf="checkAdmin == 1" (click)="addMembers()">
+                <ion-item style="border-bottom: 1px solid #dedede">
+                    <ion-icon class="greyIcon" name="person-add"></ion-icon>
+                    &nbsp;Add participants
+                </ion-item>
+            </ion-list>
+            <ion-list style=" margin-top: 1px; ">
+                <ion-item-sliding *ngFor="let m of members,let i = index">
+                    <ion-item no-padding (click)="showOptions(m,$event,i)">
+
+                        <ion-avatar item-start>
+                            <img [src]="getPicture(m.profile_image)">
+                        </ion-avatar>
+                        <span>{{m.first_name}} {{m.last_name}}</span>
+
+                        <button class="adminButton" *ngIf="m.is_superadmin==1" ion-button color="secondary" outline round>Group Admin</button>
+                    </ion-item>
+                </ion-item-sliding>
+            </ion-list>
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-list>
+            <ion-item style="text-align: center" (click)="exitGroup()">
+                <ion-icon color="danger" name="exit"></ion-icon>
+                &nbsp;Exit Group
+            </ion-item>
+        </ion-list>
+    </ion-card>
+
+</ion-content>

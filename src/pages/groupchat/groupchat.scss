@@ -1,0 +1,252 @@
+ page-groupchat {
+     // background-image: url(../assets/img/chatwallpaper.png);
+     .scroll-content {
+         background-image: url(../assets/img/chatwallpaper.png);
+         display: flex;
+         flex-direction: column;
+     }
+     .scroll-content ion-list {
+         // background-image: url(../assets/img/chatwallpaper.png);
+         margin-top: auto;
+         margin-bottom: 0;
+     }
+     .list {
+         overflow: scroll;
+         margin-top: 8px;
+         ion-item {
+             background-color: transparent;
+         }
+     }
+     .foot {
+         left: 0;
+         bottom: 0;
+         position: absolute;
+         z-index: 10;
+         display: block;
+         width: 100%;
+         //  background-color: rebeccapurple;
+         ion-textarea {
+             // border-radius: 50px;
+             // border: 1px solid #f53d3d;
+             height: 100%;
+             width: 100%
+         }
+     }
+     .bubble {
+         background-color: #F2F2F2;
+         border-radius: 5px;
+         box-shadow: 0 0 6px #B2B2B2;
+         display: inline-block;
+         padding: 7px 18px;
+         position: relative;
+         vertical-align: top;
+     }
+     .bubble::before {
+         background-color: #F2F2F2;
+         content: "\00a0";
+         display: block;
+         height: 16px;
+         position: absolute;
+         top: 11px;
+         transform: rotate( 29deg) skew( -35deg);
+         -moz-transform: rotate( 29deg) skew( -35deg);
+         -ms-transform: rotate( 29deg) skew( -35deg);
+         -o-transform: rotate( 29deg) skew( -35deg);
+         -webkit-transform: rotate( 29deg) skew( -35deg);
+         width: 20px;
+     }
+     .you {
+         float: right;
+         margin: 2px 20px 5px 45px;
+         white-space: normal;
+     }
+     .you::before {
+         box-shadow: 2px -2px 2px 0 rgba( 178, 178, 178, .4);
+         right: -9px;
+     }
+     .me {
+         float: left;
+         margin: 2px 45px 5px 20px;
+         white-space: normal;
+     }
+     .me h3 {
+         color: #f53d3d;
+     }
+     .me::before {
+         box-shadow: -2px 2px 2px 0 rgba( 178, 178, 178, .4);
+         left: -9px;
+     }
+     .img-container {
+         width: 3em;
+         height: 3em;
+         img {
+             width: 100%;
+             height: 100%;
+             border-radius: 50%;
+         }
+     }
+     .label-md {
+         margin: 0px 5px 1px 0;
+     }
+     .boundary {
+         height: 3.5em;
+         border: 1px solid #f53d3d;
+         border-radius: 50px;
+     }
+     .item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner,
+     .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+         border-bottom-color: white;
+         -webkit-box-shadow: inset 0 -1px 0 0 white;
+         box-shadow: inset 0 -1px 0 0 white;
+     }
+     .item-md.item-input.item-input-has-focus .item-inner,
+     .item-md.item-input.input-has-focus .item-inner {
+         border-bottom-color: white;
+         -webkit-box-shadow: inset 0 -1px 0 0 white;
+         box-shadow: inset 0 -1px 0 0 white;
+     }
+     .main {
+         ion-icon {
+             font-size: 2em;
+             color: white;
+             margin-top: -4px;
+         }
+         width: 100%;
+         left: 0;
+         bottom: 0px;
+         position: absolute;
+         z-index: 10;
+         display: block;
+         background: gray;
+         width: 100%;
+         .gif-list {
+             width: 100%;
+             margin: 0 auto;
+             //  height: 194px;
+             float: left;
+             .container {
+                 // height: 70%;
+                 width: 100%;
+                 float: left;
+                 display: inline-flex;
+                 overflow: auto;
+                 img {
+                     border: 1px solid darkgrey;
+                     border-radius: 7px;
+                     height: 8em;
+                     width: 42%;
+                     padding: 2px;
+                 }
+             }
+         }
+         .gif-name {
+             width: 100%;
+             height: 28px;
+             margin: 0 auto;
+             float: left;
+             margin-top: 1em;
+             .name {
+                 width: 100%;
+                 float: left;
+                 display: -webkit-box;
+                 ;
+                 overflow: auto;
+                 .outer {
+                     background: grey;
+                     border: 1px solid;
+                     color: white;
+                     border-radius: 13px;
+                     text-align: center
+                 }
+                 span {
+                     padding: 4px;
+                 }
+             }
+         }
+     }
+     [_nghost-c0] {
+         width: 100%;
+         position: absolute;
+         z-index: 9999;
+     }
+     [_nghost-c1] {
+         display: -webkit-box;
+         display: -ms-flexbox;
+         display: flex;
+         -webkit-box-orient: vertical;
+         -webkit-box-direction: normal;
+         -ms-flex-direction: column;
+         flex-direction: column;
+         width: 100%;
+         height: 240px;
+         border-radius: 3px;
+         background: #fff;
+         text-align: left;
+         -webkit-box-shadow: 0 11px 15px -7px rgba(0, 0, 0, .2), 0 24px 38px 3px rgba(0, 0, 0, .14), 0 9px 46px 8px rgba(0, 0, 0, .12);
+         box-shadow: 0 11px 15px -7px rgba(0, 0, 0, .2), 0 24px 38px 3px rgba(0, 0, 0, .14), 0 9px 46px 8px rgba(0, 0, 0, .12)
+     }
+     @media (min-width:100%) {
+         [_nghost-c1] {
+             width: 100%
+         }
+     }
+     emoji-list[_ngcontent-c1] {
+         -webkit-box-flex: 1;
+         -ms-flex-positive: 1;
+         flex-grow: 1
+     }
+     //  input[_ngcontent-c6] {
+     //      width: 100%;
+     //      padding: 5px 10px;
+     //      border: 1px solid #F0F0F0;
+     //      outline: 0;
+     //      font-size: 14px;
+     //      font-weight: inherit;
+     //      -webkit-box-sizing: border-box;
+     //      box-sizing: border-box;
+     //      visibility: hidden;
+     //  }
+     //  emoji-list[_ngcontent-c1] {
+     //       -webkit-box-flex: 1;
+     //       -ms-flex-positive: 1;
+     //       flex-grow: 1;
+     //       margin-top: -51px;
+     //  }
+     //  [_nghost-c1] {
+     //       display: -ms-flexbox;
+     //       display: flex;
+     //       -webkit-box-orient: vertical;
+     //       -webkit-box-direction: normal;
+     //       -ms-flex-direction: column;
+     //       flex-direction: column;
+     //       width: 100vw;
+     //       height: 314px;
+     //       border-radius: 3px;
+     //       background: floralwhite;
+     //       text-align: left;
+     //       -webkit-box-shadow: 0 11px 15px -7px rgba(0, 0, 0, .2), 0 24px 38px 3px rgba(0, 0, 0, .14), 0 9px 46px 8px rgba(0, 0, 0, .12);
+     //       box-shadow: 0 11px 15px -7px rgba(0, 0, 0, .2), 0 24px 38px 3px rgba(0, 0, 0, .14), 0 9px 46px 8px rgba(0, 0, 0, .12);
+     //  }
+     //  [_nghost-c2] {
+     //      display: block;
+     //      border-bottom: 1px solid #F9F9F9;
+     //      border-radius: 3px 3px 0 0;
+     //      padding: 10px;
+     //      background: floralwhite;
+     //  }
+     //  .emoji-footer[_ngcontent-c4] {
+     //      display: -webkit-box;
+     //      display: -ms-flexbox;
+     //      display: flex;
+     //      -webkit-box-align: center;
+     //      -ms-flex-align: center;
+     //      align-items: center;
+     //      -webkit-box-pack: justify;
+     //      -ms-flex-pack: justify;
+     //      justify-content: space-between;
+     //      border-top: 1px solid #F9F9F9;
+     //      border-radius: 0 0 3px 3px;
+     //      padding: 10px;
+     //      background: floralwhite;
+     //  }
+ }

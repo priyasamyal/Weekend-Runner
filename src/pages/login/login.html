@@ -1,0 +1,36 @@
+<ion-content padding class="login-main">
+    <div class="logo-container">
+        <div class="logo">
+            <img src="assets/img/logo.png" />
+        </div>
+    </div>
+    <form [formGroup]="loginForm">
+        <ion-item class="input-txt">
+            <ion-label class="label" floating color="white">
+                USERNAME
+            </ion-label>
+            <ion-input class="input" type="text" formControlName="email_id"></ion-input>
+        </ion-item>
+        <ion-item class="input-txt">
+            <ion-label floating color="white">
+                PASSWORD
+            </ion-label>
+
+            <ion-input class="input" type="password" formControlName="password"></ion-input>
+        </ion-item>
+        <b> <span (click)="goToForgotPassword()" class="forgot-password">Forgot Password ?</span></b><br>
+        <div class="buttons">
+            <button (click)="doLogin()" class="btn-login radius" ion-button color="black" [disabled]="!loginForm.valid" block text-uppercase>
+                      login</button>
+            <span class="txt-center">OR </span>
+            <button class="btn-facebook radius" (click)="loginViaFacebook()" ion-button color="facebook" block text-capitalize>
+                        Login with Facebook </button> <span class="txt-center">
+                            
+                         OR   </span>
+            <button ion-button block class="google-auth-button" color="google" (click)="doGoogleLogin()">Login with Google</button>
+            <br>
+            <span (click)="goTosignUp()" class="txt-center">DON'T HAVE AN ACCOUNT? <span  style="color:black"> SIGN UP</span></span>
+        </div>
+
+    </form>
+</ion-content>

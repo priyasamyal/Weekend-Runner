@@ -1,0 +1,78 @@
+page-events {
+    .img-container {
+        width: 3em;
+        height: 3em;
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+    }
+    .main-content {
+        h3 {
+            padding: 0px 0px 0px 17px;
+            opacity: 0.7;
+            //padding-top: 60px;
+            // opacity: 0.7;
+            // margin-top: 4em;
+            // margin-left: 2em;
+        }
+        .past-event {
+            ion-row {
+                //  border-bottom: 1px solid #dedede;
+                padding: 12px;
+            }
+            .column-1 {
+                padding: 0px 2px 0px 4px;
+                .month {
+                    color: red;
+                    font-size: larger;
+                }
+                .date {
+                    color: slategrey;
+                    font-size: xx-large;
+                    opacity: 0.7;
+                }
+            }
+            .column-2 {
+                padding: 0px 2px 0px 4px;
+                border-right: 1px solid #dedede;
+                border-block-start: 4px;
+                .title {
+                    //  color: slategray;
+                    color: black;
+                    font-size: 16px;
+                    font-weight: 500;
+                }
+                .time {
+                    opacity: 0.4;
+                    font-size: 1.5rem;
+                }
+                .location {
+                    opacity: 0.4;
+                    font-size: 1.3rem;
+                }
+            }
+            .popover-icon {
+                padding-left: 14px;
+                ion-icon {
+                    font-size: 3rem;
+                }
+            }
+        }
+    }
+    .grid {
+        padding: 0px;
+        margin-right: auto;
+        width: 100%;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+}

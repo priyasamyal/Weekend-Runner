@@ -1,0 +1,37 @@
+page-mygroups {
+    ion-icon {
+        display: inline-block;
+        font-size: 2.0em;
+        color: white
+    }
+    .scroll-content {
+        margin-top: 56px;
+        margin-bottom: 56px;
+    }
+    ion-avatar {
+        background: 1px solid #dedede;
+        .img-loaded+ion-spinner {
+            display: none;
+        }
+        // .center in my case to make the spinner at the center
+        .center {
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+    }
+    h4 {
+        padding: 2px;
+    }
+    .item-md h4,
+    .item-md h5,
+    .item-md h6 {
+        margin: 2px 0;
+        font-size: 1.4rem;
+        font-weight: 400;
+        line-height: normal;
+    }
+    .chat_box {
+        color: #f53d3d;
+    }
+}

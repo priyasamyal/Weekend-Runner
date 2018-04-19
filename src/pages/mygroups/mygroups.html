@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-navbar color="danger">
+        <ion-title>My Groups</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="creategroup()">
+             <ion-icon name="person-add"></ion-icon>  </button>
+
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <div (click)="creategroup()" *ngIf="myGroups.length==0" style="text-align: center; margin-top: 9em;">
+        <img src="assets/img/add-group.png" style="height: 30%; width: 30% ;">
+        <ion-title>Click to create new Group</ion-title>
+    </div>
+    <ion-list>
+        <ion-item-sliding *ngFor="let item of myGroups,let i = index">
+            <ion-item>
+                <ion-avatar item-left (click)="zoom(api.imageUrl+item.group_image)">
+                    <img src="{{api.imageUrl+item.group_image}}" (load)="loaded = true" [ngClass]="{'img-loaded':loaded}" [hidden]="!loaded">
+                    <ion-spinner [ngClass]="{'center':true}" *ngIf="!loaded"></ion-spinner>
+                </ion-avatar>
+                <h4 text-capitalize class="name" (click)="groupInfo(item)">{{item.group_name}}</h4>
+                <ion-icon class="chat_box" ios="ios-chatbubbles" md="md-chatbubbles" item-right (click)="chat(item)"></ion-icon>
+            </ion-item>
+            <ion-item-options>
+                <button ion-button color="danger" (click)="warningAlert(item,i)">
+                    <ion-icon name="trash"></ion-icon></button>
+                <button ion-button color="secondary" (click)="update(item,i)">
+                        <ion-icon name="create"></ion-icon></button>
+            </ion-item-options>
+
+        </ion-item-sliding>
+    </ion-list>
+
+</ion-content>

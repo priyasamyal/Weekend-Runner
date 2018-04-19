@@ -1,0 +1,45 @@
+<ion-header>
+
+    <ion-navbar color="danger">
+        <ion-title text-center>My Activity</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content class="main">
+    <div class="container">
+
+        <b> <h1> START HERE</h1></b>
+    </div>
+    <div class="description">
+        <span>sustained effort at a faster pace</span>
+    </div>
+    <div class="showdistance">
+        <ion-grid no-padding>
+            <ion-row>
+                <ion-col>
+                    <h1>{{time}}</h1>
+                    <br>
+
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col col-6>
+                    <h1>{{total_distance}}</h1><br>
+                    <span>Km</span>
+                </ion-col>
+                <ion-col col-6>
+                    <h1>{{pace}}</h1><br>
+                    <span>Avg.Pace</span>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+    <div class="button" (click)="start()"><br>
+        <span>{{title}}</span>
+
+    </div>
+
+
+</ion-content>

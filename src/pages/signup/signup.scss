@@ -1,0 +1,12 @@
+page-signup {
+    .heading {
+        color: color($colors, black);
+        font-size: 20px;
+    }
+    .signup {
+        ion-grid {
+            padding: 10px 10px 0px 10px;
+        }
+    }
+    .facebooksignup-btn {}
+}

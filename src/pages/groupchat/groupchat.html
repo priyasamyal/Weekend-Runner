@@ -1,0 +1,97 @@
+<ion-header>
+    <ion-navbar color="danger">
+        <ion-row (click)="groupInfo()">
+            <ion-col col-2>
+                <ion-avatar class="img-container">
+                    <img [src]="groupImage">
+                </ion-avatar>
+            </ion-col>
+            <ion-col col-10>
+                <ion-title style="margin-top: 7px"> {{group.group_name}}</ion-title>
+            </ion-col>
+        </ion-row>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content #content>
+
+    <div class='list' [style.height]="height" id="chat-autoscroll">
+        <ion-list no-padding no-lines>
+            <ion-item *ngFor="let msg of messages;let i = index">
+                <div class="bubble you" *ngIf="msg.sender_id == this.userProvider.user.id">
+
+                    <div style="width: 10em" *ngIf="msg.message_image != null " (click)="zoomImage(api.chatImageUrl+ msg.message_image)">
+                        <!-- <img style="height: 11em ; width: 100%; border-radius: 1em;" src="{{'http://103.43.152.210:8087/images/chat_files/'+ msg.message_image}}">
+                  -->
+                        <img style="height: 11em ; width: 100%; border-radius: 1em;" src="{{api.chatImageUrl+msg.message_image}}">
+
+                    </div>
+                    <h3 highlight [data]="msg.msg" style="font-size: 1.5rem; color:gray">{{msg.msg}}</h3>
+                </div>
+
+                <div class="bubble me" *ngIf="msg.sender_id != this.userProvider.user.id">
+                    <h5>{{msg.first_name}} {{msg.last_name}}</h5>
+
+                    <div style="width: 10em" *ngIf="msg.message_image != null " (click)="zoomImage(api.chatImageUrl+ msg.message_image)">
+                        <img style="height: 11em ; width: 100%; border-radius: 1em;" src="{{api.chatImageUrl+ msg.message_image}}">
+                    </div>
+                    <h3 highlight [data]="msg.msg" style="font-size: 1.5rem;color:gray"></h3>
+                </div>
+
+            </ion-item>
+        </ion-list>
+    </div>
+
+    <div class="main" *ngIf="gifSelected">
+        <div class="gif-list">
+            <div class="container">
+                <ion-icon name="close" (click)="closegif()"></ion-icon>
+                <ng-container *ngFor="let post of values">
+                    <img [src]="post.images.fixed_height_downsampled.url" (click)="image(post.images.fixed_height_downsampled.url)">
+                </ng-container>
+
+            </div>
+        </div>
+        <div class="gif-name">
+            <div class="name">
+                <div class="outer" *ngFor="let option of options" (click)="search(option)">
+                    <span> {{option}} </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</ion-content>
+<div fixed class='foot' *ngIf="!gifSelected">
+    <ion-toolbar [style.bottom]="bottom">
+        <ion-buttons left>
+            <button ion-button icon-only (click)="smiley()">
+                                                <ion-icon color="danger" [name]="icon_name"></ion-icon>
+              </button>
+        </ion-buttons>
+
+        <ion-item class='boundary'>
+            <ion-textarea #sendInput (focusin)="focus($event)" (focusout)="focusout(show)" [(ngModel)]="chat_input" placeholder="Write your message ..." style="font-size: 18px;"></ion-textarea>
+        </ion-item>
+
+        <ion-buttons right>
+            <input #fileInput id="file" type="file" style="display:none" capture="camera" accept="image/*" class="file" (change)='fileChange($event)' />
+            <button ion-button icon-only (click)="fileInput.click()">
+                 <ion-icon color="danger" name="attach"></ion-icon>
+            </button>
+
+            <!-- <button ion-button icon-only (click)="openActionSheet()">
+                    <ion-icon color="danger" name="attach"></ion-icon>
+           </button> -->
+            <button ion-button icon-only (click)=send(chat_input)>
+                  <ion-icon color="danger" name="send"></ion-icon>
+            </button>
+
+        </ion-buttons>
+    </ion-toolbar>
+
+    <div *ngIf="show==true" [(emojiPickerIf)]="toggled" [emojiPickerDirection]="'bottom'" (emojiPickerSelect)="handleSelection($event)">
+
+    </div>
+</div>

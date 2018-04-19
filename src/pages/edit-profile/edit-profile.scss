@@ -1,0 +1,82 @@
+page-edit-profile {
+    .scroll-content {
+        margin-top: 0px;
+        padding-bottom: 0px;
+    }
+    .powerIcon {
+        display: inline-block;
+        font-size: 2.0em;
+        color: white
+    }
+    .profile-content {
+        .scroll-content {
+            margin-top: 0px;
+            padding-bottom: 0px;
+        }
+        .profile-image-wrapper {
+            width: "100%";
+            height: 150px;
+            opacity: 1;
+            padding: 65px;
+            background-size: cover;
+            // background-image: url(../assets/img/groccery1.png);
+        }
+        .profile-image {
+            margin: 63px auto;
+            max-width: 9em;
+            height: 9em;
+            background-color: #ccc;
+            border-radius: 50%;
+            text-align: center;
+            display: block;
+        }
+        .profile-data {
+            margin-top: 30px;
+            margin-left: 6px;
+            ion-grid {}
+            .radiobtn {
+                margin-top: 10px;
+                display: inline-flex;
+            }
+            .radio-label {
+                margin: 0px 9px 13px 4px;
+            }
+        }
+        img {
+            /* max-width: 150px; */
+            /* max-height: 100%; */
+            border: 1px;
+            height: 100%;
+            border-radius: 100%;
+            width: 100%;
+        }
+        .height-container {
+            display: inline-flex;
+            ion-input {
+                border-bottom: 1px solid #dedede;
+            }
+            span {
+                padding-top: 16px;
+            }
+        }
+    }
+    .edit-profile-input {
+        border-bottom: 1px solid #dedede;
+    }
+}
+
+page-edit-profile .profile-content .profile-image-wrapper {
+    width: "100%";
+    height: 207px;
+    margin-top: -21px;
+    padding: 65px;
+    background-image: url(../assets/img/groccery1.png);
+}
+
+[col-6] {
+    padding: 0px;
+}
+
+// .tabbar.show-tabbar {
+//     opacity: 0;margin: 0px 9px 13px 4px;
+// }

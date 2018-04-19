@@ -1,0 +1,69 @@
+page-activity-map {
+    .main {
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        background-image: url(../assets/img/groccery1.png);
+        .container {
+            height: 11%;
+            width: 100%;
+            margin-top: 30%;
+            color: #f53d3d;
+            font-family: monospace;
+            h1 {
+                margin-top: 1.6rem;
+                margin-bottom: 1rem;
+                font-size: 3.6rem;
+                line-height: 1.2;
+                font-weight: unset;
+            }
+        }
+        .description {
+            text-align: center;
+            width: 100%;
+            color: white;
+            font-size: 2rem;
+            span {
+                color: white;
+                font-weight: unset;
+            }
+        }
+        .showdistance {
+            height: 10px;
+            width: 100%;
+            //    margin-top: 27%;
+            margin-top: 0%;
+            h1 {
+                color: white;
+                margin-bottom: -10px;
+            }
+            span {
+                color: white;
+                font-weight: 100;
+                font-size: 1.6rem;
+            }
+        }
+        .button {
+            background-color: white;
+            height: 80px;
+            width: 80px;
+            margin-top: 19%;
+            padding: 11px 0px 0px 4px;
+            border-radius: 100%;
+            border-color: #ff3366;
+            // border-size: 1px;
+            border-style: solid;
+            bottom: 2em;
+            left: 37%;
+            position: absolute;
+        }
+        span {
+            color: #f53d3d;
+            font-size: 1.5rem;
+            font-weight: bolder;
+        }
+    }
+    // .tabbar.show-tabbar {
+    //     opacity: 0;
+    // }
+}

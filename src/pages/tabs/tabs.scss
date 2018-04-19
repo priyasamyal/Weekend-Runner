@@ -1,0 +1,60 @@
+page-tabs {
+    .tabs-md .tabbar {
+        background: #f53d3d;
+    }
+    .tabs-ios .tabbar {
+        background: #f53d3d;
+    }
+    .tabs-md .tab-button[aria-selected=true] .tab-button-icon {
+        font-size: 2.1rem;
+        color: white;
+        -webkit-transform: translate3d(0, -2px, 0);
+        transform: translate3d(0, -2px, 0);
+    }
+    .tabs-ios .tab-button[aria-selected=true] .tab-button-icon {
+        color: white;
+        font-size: 2.1rem;
+    }
+    .tabs-md .tab-button[aria-selected=false] .tab-button-icon {
+        font-size: 2.1rem;
+        color: white;
+        opacity: 0.4;
+        -webkit-transform: translate3d(0, -2px, 0);
+        transform: translate3d(0, -2px, 0);
+    }
+    .tabs-ios .tab-button[aria-selected=false] .tab-button-icon {
+        color: white;
+        opacity: 0.4;
+        font-size: 2.1rem;
+    }
+    .tabs-md .tab-button-text {
+        color: white;
+        font-size: 10px;
+        opacity: 0.4;
+    }
+    .tabs-ios .tab-button-text {
+        color: white;
+        font-size: 10px;
+        opacity: 0.4;
+    }
+    .tabs-md .tab-button[aria-selected=true] .tab-button-text {
+        opacity: 1;
+        font-size: 10px;
+        -webkit-transform: scale3d(1.16667, 1.16667, 1);
+        transform: scale3d(1.16667, 1.16667, 1);
+        -webkit-transition: -webkit-transform 0.3s ease-in-out;
+        transition: -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+    }
+    .tabs-ios .tab-button[aria-selected=true] .tab-button-text {
+        opacity: 1;
+        font-size: 10px;
+        -webkit-transform: scale3d(1.16667, 1.16667, 1);
+        transform: scale3d(1.16667, 1.16667, 1);
+        -webkit-transition: -webkit-transform 0.3s ease-in-out;
+        transition: -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+    }
+}
